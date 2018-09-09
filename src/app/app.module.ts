@@ -18,6 +18,8 @@ import { RecipesComponent } from "./recipes/recipes.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { IngredientComponent } from "./ingredient/ingredient.component";
 
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,7 @@ import { IngredientComponent } from "./ingredient/ingredient.component";
     IngredientComponent,
     NavbarComponent
   ],
-  imports: [HttpModule, BrowserModule, AppRoutingModule],
+  imports: [HttpModule, BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

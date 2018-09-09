@@ -1,7 +1,14 @@
-.ingLst {
-    margin-top: 2%;
+.row > div {
+  margin: 30px 0;
 }
 
-.list-group-item {
-    width: 40%;
+.card {
+  height: 100%;
+
+  img {
+    display: block;
+    max-height: 200px;
+    max-width: 90%;
+    margin: auto;
+  }
 }

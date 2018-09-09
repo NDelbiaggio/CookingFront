@@ -1,3 +1,13 @@
-<p>
-  ingredient works!
-</p>
+<div class="container">
+  <div *ngIf="ingredient">
+
+    <div class="card">
+      <img class="card-img-top " src="{{ingredient.image}}" alt="Ingredient image ">
+      <div class="card-body ">
+        <h5 class="card-title ">{{ingredient.name}}</h5>
+        <p class="card-text ">{{ingredient.category}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>

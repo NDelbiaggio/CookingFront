@@ -1,8 +1,14 @@
 <div class="container">
-  <div class="ingLst list-group">
-    <p class="group-item" title="IngredientsList">Ingredients list</p>
-    <li *ngFor="let ing of ingredientsList">
-      <a [routerLink]="['/ingredients', ing._id]" class="item">{{ing.name}}</a>
-    </li>
+  <div class="row row-eq-height">
+    <div *ngFor="let ing of ingredientsList " class="col-md-3">
+      <div class="card">
+        <img class="card-img-top " src="{{ing.image}}" alt="Card image cap ">
+        <div class="card-body ">
+          <h5 class="card-title ">{{ing.name}}</h5>
+          <p class="card-text ">{{ing.category}}</p>
+          <a [routerLink]="['/ingredients', ing._id]" class="btn btn-primary ">Show</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
