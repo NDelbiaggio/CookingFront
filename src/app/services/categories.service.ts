@@ -1,18 +1,18 @@
-import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
+import { Injectable } from '@angular/core';
+import { Http } from '../../../node_modules/@angular/http';
 import { environment } from "../../environments/environment";
-
 import { map, catchError } from "rxjs/operators";
 import { of } from "rxjs";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
-export class IngredientsService {
-  private url = environment.apiUrl + "/api/ingredients";
+export class CategoriesService {
+
+  private url = environment.apiUrl + "/api/categories";
   constructor(private http: Http) {}
 
-  getIngredients() {
+  getCategories() {
     return this.http.get(this.url).pipe(
       map(response => {
         return response.json();
@@ -23,12 +23,5 @@ export class IngredientsService {
       })
     );
   }
-
-  postIngredient(ing : HTMLInputElement){
-    this.http.post(this.url, ing)
-    .subscribe(response=>{
-      console.log(response.json());
-    })
-  }
-
+  
 }

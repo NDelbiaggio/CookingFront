@@ -7,11 +7,16 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { RecipesComponent } from "./recipes/recipes.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { IngredientComponent } from "./ingredient/ingredient.component";
+import { IngredientFormComponent } from "./forms/ingredient-form/ingredient-form.component";
 
 const routes: Routes = [
   {
     path: "",
     component: HomepageComponent
+  },
+  {
+    path: "ingredients/form",
+    component: IngredientFormComponent
   },
   {
     path: "ingredients/:id",

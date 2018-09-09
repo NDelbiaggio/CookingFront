@@ -17,6 +17,9 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 import { RecipesComponent } from "./recipes/recipes.component";
 import { RecipeComponent } from "./recipe/recipe.component";
 import { IngredientComponent } from "./ingredient/ingredient.component";
+import { IngredientFormComponent } from "./forms/ingredient-form/ingredient-form.component";
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,10 @@ import { IngredientComponent } from "./ingredient/ingredient.component";
     RecipesComponent,
     RecipeComponent,
     IngredientComponent,
-    NavbarComponent
+    NavbarComponent,
+    IngredientFormComponent
   ],
-  imports: [HttpModule, BrowserModule, AppRoutingModule],
+  imports: [HttpModule, BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
