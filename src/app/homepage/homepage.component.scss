@@ -1,0 +1,40 @@
+.btn-sq-lg {
+    width:350px !important;
+    height: 350px !important;
+  }
+
+.success {
+    position:relative;
+    top: 0px;
+    border:0;
+    transition: all 40ms linear;
+    margin-top:75px;
+    margin-bottom:0px;
+    margin-left:150px;
+    margin-right:100px;
+}
+
+.primary {
+    position:relative;
+    top: 0px;
+    border:0;
+    transition: all 40ms linear;
+    margin-top:75px;
+    margin-bottom:0px;
+    margin-left:100px;
+    margin-right:0px;
+}
+
+.title {
+   font-size: 32pt;
+   font-family: fantasy;
+}
+
+.btn-text {
+    position:relative;
+    font-size: 20pt;
+    font-family: fantasy;
+    color: black;
+    top: 45%;
+}
+

@@ -1,3 +1,8 @@
-<p>
-  ingredients works!
-</p>
+<div class="container">
+  <div class="ingLst list-group">
+    <p class="group-item" title="IngredientsList">Ingredients list</p>
+  <li *ngFor="let ing of ingredientsList">
+    <a [routerLink]="['ing._id']" class="item">{{ing.name}}</a>
+  </li>
+  </div>
+</div>
