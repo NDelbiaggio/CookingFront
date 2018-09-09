@@ -1,31 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { IngredientsService } from '../services/ingredients.service';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { IngredientsService } from "../services/ingredients.service";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-ingredients',
-  templateUrl: './ingredients.component.html',
-  styleUrls: ['./ingredients.component.scss']
+  selector: "app-ingredients",
+  templateUrl: "./ingredients.component.html",
+  styleUrls: ["./ingredients.component.scss"]
 })
-export class IngredientsComponent implements OnInit {
+export class IngredientsComponent implements OnInit, OnDestroy {
   ingredientsList;
-  constructor(private service: IngredientsService) {
-    service.getIngredients().subscribe(
-      response =>{
-      this.ingredientsList =response.json();
-      console.log(response.json());
-    },
-      (error : Response)=>{
-        if(error.status === 404){
-          console.log(error.statusText)
-        }else{
-          alert("Uuuuewww bad news...")
-        console.log(error);
-        }
-      
-    })
-   }
+
+  subscription: Subscription;
+
+  constructor(private service: IngredientsService) {}
 
   ngOnInit() {
+    this.subscription = this.service.getIngredients().subscribe(ingredients => {
+      this.ingredientsList = ingredients;
+    });
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }

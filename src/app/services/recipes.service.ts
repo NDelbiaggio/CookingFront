@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { environment } from "./../../environments/environment";
+import { Injectable } from "@angular/core";
+import { Http } from "@angular/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
-
 export class RecipesService {
-  private url='http://localhost:3900/api/recipes';
-  constructor(private http : Http) {}
+  private url = environment.apiUrl + "/api/recipes";
+  constructor(private http: Http) {}
 
-  getRecipes(){
+  getRecipes() {
     return this.http.get(this.url);
   }
 }

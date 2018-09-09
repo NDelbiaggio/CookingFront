@@ -1,8 +1,8 @@
 <div class="container">
   <div class="recpLst list-group">
     <p class="group-item" title="RecipesList">Recipes list</p>
-  <li *ngFor="let recp of recipesList">
-    <a [routerLink]="['recp._id']" class="item">{{recp.name}}</a>
-  </li>
+    <li *ngFor="let recp of recipesList">
+      <a [routerLink]="[ '/recipes', recp._id]" class="item">{{recp.name}}</a>
+    </li>
   </div>
 </div>
