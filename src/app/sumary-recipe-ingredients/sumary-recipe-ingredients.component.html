@@ -1,0 +1,12 @@
+<h4>
+  Sumary Ingredients
+</h4>
+
+<div>
+  <ul>
+    <li *ngFor="let ingredient of ingredients">
+      {{ingredient.ingredient.name}} - {{ingredient.quantity.quantity}} {{ingredient.quantity.unit}}
+      <button (click)="removeIngredient(ingredient)" class="btn btn-danger btn-sm">X</button>
+    </li>
+  </ul>
+</div>

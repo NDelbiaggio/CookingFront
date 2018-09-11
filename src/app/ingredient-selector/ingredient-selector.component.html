@@ -1,0 +1,24 @@
+<div *ngIf="!ingredientSelected; else ingredientSelector">
+  <button class="btn-sm btn-success" (click)="selectIngredient()">
+    select for recipe
+  </button>
+</div>
+
+
+<ng-template #ingredientSelector>
+  <div *ngIf="units">
+
+    <form [formGroup]="form">
+      <input type="number" name="quantity" formControlName="quantity" type="text" placeholder="select quantity">
+      <select formControlName="unit">
+        <option value="units">units</option>
+        <option *ngFor="let unit of units; let i = index " value="{{unit.name}}" [selected]="i == 0">{{unit.name}}</option>
+      </select>
+      <div class="actionsBtn ">
+        <button class="btn btn-sm btn-warning " (click)="cancelIngredient() ">cancel</button>
+        <button *ngIf="!hasBeenSaved" [disabled]="form.invalid" class="btn btn-sm btn-success " (click)="saveQuantity(form.value)">save</button>
+      </div>
+    </form>
+
+  </div>
+</ng-template>

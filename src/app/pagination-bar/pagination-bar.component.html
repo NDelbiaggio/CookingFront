@@ -1,0 +1,19 @@
+<div *ngIf="nbPages > 1" >
+  <nav aria-label="Ingredients page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="pageChanged(currentPage -1)" [hidden]="currentPage === 1" >
+          Previous
+        </a>
+      </li>
+      <li *ngFor="let page of pages ;let i = index" class="page-item" [class.active]="currentPage == i+1" >
+        <a class="page-link" (click)="pageChanged(i+1)">{{i+1}}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="pageChanged(currentPage + 1)" [hidden]="currentPage === pages.length">
+          Next
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

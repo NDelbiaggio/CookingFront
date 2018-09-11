@@ -19,8 +19,12 @@ import { RecipeComponent } from "./recipe/recipe.component";
 import { IngredientComponent } from "./ingredient/ingredient.component";
 import { IngredientFormComponent } from "./forms/ingredient-form/ingredient-form.component";
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeFormComponent } from './forms/recipe-form/recipe-form.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { IngredientSelectorComponent } from "./ingredient-selector/ingredient-selector.component";
+import { SumaryRecipeIngredientsComponent } from './sumary-recipe-ingredients/sumary-recipe-ingredients.component';
+import { PaginationBarComponent } from './pagination-bar/pagination-bar.component';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,6 @@ import { RecipeFormComponent } from './forms/recipe-form/recipe-form.component';
     IngredientFormComponent,
     RecipeFormComponent
   ],
-  imports: [HttpModule, BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
