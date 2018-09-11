@@ -1,14 +1,34 @@
 <div class="container">
-  <div class="row row-eq-height">
-    <div *ngFor="let ing of ingredientsList " class="col-md-3">
-      <div class="card">
-        <img class="card-img-top " src="{{ing.image}}" alt="Card image cap ">
-        <div class="card-body ">
-          <h5 class="card-title ">{{ing.name}}</h5>
-          <p class="card-text ">{{ing.category}}</p>
-          <a [routerLink]="['/ingredients', ing._id]" class="btn btn-primary ">Show</a>
+  <input 
+    class="form-control searchBar" 
+    [(ngModel)]="search" 
+    (input)="filterIngredients()" 
+    type="search" 
+    placeholder="Search an ingredient"
+  />
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row lstIngredients">
+        <div *ngFor="let ing of ingredientsList " class="col-md-4">
+          <div class="card">
+            <img class="card-img-top " src="{{ing.image}}" alt="Card image cap ">
+            <div class="card-body ">
+              <h5 class="card-title ">{{ing.name}}</h5>
+              <p class="card-text ">{{ing.category}}</p>
+              <app-ingredient-selector (canceled)="removedIngFromRecipe(ing)" (saved)="addIngredientToRecipe($event, ing)"></app-ingredient-selector>
+              <a [routerLink]="['/ingredients', ing._id]" class="btn btn-primary ">Show</a>
+            </div>
+          </div>
+        </div>
+        <div class="paginationBar col-12" >
+          <app-pagination-bar (changed)="filterIngredients($event)" [size]="nbPages" ></app-pagination-bar>
         </div>
       </div>
     </div>
+    <div class="col-md-4">
+      <sumary-recipe-ingredients (removed)="removedIngFromRecipe($event)" [ingredients]="ingredientsForRecipe"></sumary-recipe-ingredients>
+    </div>
   </div>
+
 </div>

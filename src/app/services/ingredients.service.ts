@@ -22,8 +22,8 @@ export class IngredientsService {
     );
   }
 
-  getIngredients(): Observable<any[]> {
-    return this.http.get(this.url).pipe(
+  getIngredients(opt?): Observable<any> {
+    return this.http.get(this.url, { params: opt || {} }).pipe(
       map(response => {
         return response.json();
       }),
@@ -34,11 +34,9 @@ export class IngredientsService {
     );
   }
 
-  postIngredient(ing : HTMLInputElement){
-    this.http.post(this.url, ing)
-    .subscribe(response=>{
+  postIngredient(ing: HTMLInputElement) {
+    this.http.post(this.url, ing).subscribe(response => {
       console.log(response.json());
-    })
+    });
   }
-
 }

@@ -19,10 +19,8 @@ export class IngredientComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       let id = params.get("id");
-      console.log(id);
       this.ingredientService.getIngredient(id).subscribe(ingredient => {
         this.ingredient = ingredient;
-        console.log(this.ingredient);
       });
     });
   }

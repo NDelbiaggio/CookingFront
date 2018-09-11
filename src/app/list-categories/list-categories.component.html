@@ -1,0 +1,6 @@
+<div class="form-group">
+  <select formControlName = "category">
+    <option selected>Categories</option>
+    <option *ngFor="let cat of lstCategories">{{cat.name}}</option>
+  </select>
+</div>
